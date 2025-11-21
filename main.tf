@@ -2,12 +2,13 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "ec2" {
-  source = "./modules/ec2"
-}
+resource "aws_instance" "example" {
+  ami           = "ami-0fa3fe0fa7920f68e"
+  instance_type = "t3.micro"
 
-output "instance_public_ip" {
-  value = module.ec2.abc
+  tags = {
+    Name = "raham-instance"
+  }
 }
 
 
