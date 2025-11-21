@@ -5,12 +5,13 @@ provider "aws" {
 resource "aws_instance" "example" {
   count = 3
   ami           = "ami-0fa3fe0fa7920f68e"
-  instance_type = "t3.micro"
+  instance_type = "t3.micro
 
   tags = {
     Name = "raham-instance"
   }
 }
+
 
 
 
